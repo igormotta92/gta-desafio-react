@@ -1,0 +1,46 @@
+# olhar  - ViteJs
+ - https://vitejs.dev/blog/announcing-vite2.html
+
+#Criando um projeto
+ - npx create-react-app [nome] --template typescript -> Instala [create-react-app] localmente
+    ou
+ - npm instal-g create-react-app -> Instala o [create-react-app] de forma global
+ - create-react-app [nome] -template typescript
+
+#Executando o projeto
+ - npm start -> Development
+ - npm run build + serve -s build -> Production
+
+# Condicional para a carga do env
+ - npm install --save-dev env-cmd OR npm instal -D env-cmd
+ Link: https://www.npmjs.com/package/env-cmd
+
+---------------------------------------------- // ----------------------------------------------
+### Docker ###
+- https://docs.docker.com/engine/reference/commandline/system_prune/
+
+Criar imagem:
+$ docker build -t react-navigation . 
+
+Inicializar imagem
+$ docker run --name react -i -t -d -p 3000:3000 react-navigation 
+
+Parar e remover imagem
+$ docker stop react
+$ docker rm react
+
+---------------------------------------------- // ----------------------------------------------
+### Outros ###
+
+-- # --
+The React UI library you always wanted
+https://mui.com/pt/
+
+-- # --
+npm install react-icons --save
+https://react-icons.github.io/react-icons/
+
+-- # --
+10 Truques do NPM
+https://www.treinaweb.com.br/blog/10-truques-do-npm-voce-conhece-todos
+

@@ -1,0 +1,1 @@
+export { default as ExemploComponent } from './ExemploComponent'
