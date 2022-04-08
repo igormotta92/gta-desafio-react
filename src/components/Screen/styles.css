@@ -1,0 +1,12 @@
+.screen {
+  width: 400px;
+  height: 80px;
+  background-color: #4c4c4c;
+  display: flex;
+  color: #FFF;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 40px;
+  padding-right: 10px;
+  border-top: 2px solid #262626;
+}

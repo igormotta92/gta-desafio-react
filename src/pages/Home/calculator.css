@@ -1,0 +1,47 @@
+.calculate {
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculate--button {
+  width: 400px;
+  height: 220px;
+  background-color: #313131;
+}
+
+.calculate--button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #484848;
+  width: 100px;
+  height: 40px;
+  color: #FFF;
+  margin: 5px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.calculate--button a:hover {
+  background-color: #656565;
+}
+
+.line1 {
+  display: flex;
+}
+
+.line2 {
+  display: flex;
+}
+
+.line3 {
+  display: flex;
+}
+
+.line4 {
+  display: flex;
+}

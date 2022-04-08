@@ -1,3 +1,16 @@
+![Imgur](https://i.imgur.com/j9JmM4L.png)
+
+# **Trilha Específica - Front-end - Reactjs**
+
+## **Grupo 02**
+
+- [Claudia Andrade](https://github.com/maiagripp)
+- [Igor Almeida](https://github.com/igormotta92)
+- [Rodrigo Rios](https://github.com/Rodrigo-Rios)
+- [Ricardo Pinheiro](https://github.com/CaduPinheiro)
+
+Uma pequena calculadora em React
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

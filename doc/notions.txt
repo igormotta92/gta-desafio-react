@@ -44,3 +44,7 @@ https://react-icons.github.io/react-icons/
 10 Truques do NPM
 https://www.treinaweb.com.br/blog/10-truques-do-npm-voce-conhece-todos
 
+-- # --
+Atualizar pacotes
+NPM: npm outdated & npx npm-check -u
+YARN: https://classic.yarnpkg.com/lang/en/docs/cli/upgrade-interactive/
