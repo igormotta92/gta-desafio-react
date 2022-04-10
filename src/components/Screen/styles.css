@@ -1,7 +1,7 @@
 .screen {
-  width: 400px;
-  height: 80px;
-  background-color: #4c4c4c;
+  width: 290px;
+  height: 150px;
+  background-color: #0c0c0c;
   display: flex;
   color: #FFF;
   align-items: flex-end;
