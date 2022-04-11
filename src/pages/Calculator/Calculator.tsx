@@ -3,18 +3,24 @@ import "./calculator.css";
 import { Button } from "../../components/Button";
 import Screen from '../../components/Screen';
 import { evaluate, typeOf } from "mathjs";
-
+import { ObjectFlags } from "typescript";
 
 export default function Calculator() {
 
   const [historicExpression, addHistoricExpression] = useState<Array<string>>([]);
-  const [expression, setExpression] = useState<string>('');
 
-  const handlerClickBackspace = (): void => {
+  // virou let por causa 
+  let [expression, setExpression] = useState<string>('');
+
+  const cleanLastKeyPress = () => {
     setExpression(oldValue => {
       if (oldValue == 'Error') return '';
       return oldValue.substring(0, oldValue.length - 1);
     });
+  }
+
+  const handlerClickBackspace = (): void => {
+    cleanLastKeyPress();
   }
 
   const handlerClean = (): void => {
@@ -31,12 +37,41 @@ export default function Calculator() {
     setExpression(expression + value)
   }
 
-  const calculate = (e: any): void => {
+  const handlerKeypress = (e: any) => {
+    let value = e.key;
 
+    switch (value) {
+      case 'Backspace':
+        cleanLastKeyPress();
+        break;
+      case 'Enter':
+      case '=':
+        calculate();
+        break;
+      case '%':
+        let regexp = /([0-9]+)$/g;
+        const result = expression.match(regexp);
+        if (result && result.length > 0) {
+          let percent = parseFloat(result[0]) / 100;
+          let re = new RegExp(`${result[0]}$`);
+          let newValue = expression.replace(re, percent.toString());
+          // --
+          setExpression(newValue);
+          // o calcular deveria ser aqui. Verificar depois como isso poderia ser feito
+        }
+        break;
+
+      default:
+        if (!/[0-9=*/\-\+%(),]/.test(value) || value == 'LaunchApplication2') return;
+        setExpression(expression + value);
+        break;
+    }
+
+  }
+
+  const calculate = (): void => {
     try {
-
       let result = evaluate(expression.replaceAll(',', '.'));
-
       if (result && expression.trim() != '') {
         addHistoricExpression(oldArray => {
           if (oldArray.length > 2) oldArray.shift();
@@ -48,18 +83,17 @@ export default function Calculator() {
     } catch (error) {
       setExpression('Error');
     }
-
   }
 
   return (
     <div>
       <div className='calculate'>
-        <Screen value={expression} stateOnChange={setExpression} calculate={calculate} historic={historicExpression} />
+        <Screen value={expression} historic={historicExpression} fnHandlerKeypress={handlerKeypress} />
         <div className='calculate--buttonArea'>
 
           <div className='line'>
-            <Button onClick={handlerClean} value="c">C</Button>
-            <Button onClick={handlerCleanAll} value="ce">CE</Button>
+            <Button onClick={handlerCleanAll} value="c">C</Button>
+            <Button onClick={handlerClean} value="ce">CE</Button>
             <Button onClick={handlerClickBackspace} value="<" size={2}>{"<"}</Button>
           </div>
           <div className='line'>

@@ -11,6 +11,14 @@
 
 Uma pequena calculadora em React
 
+# Getting Started with Docker
+
+Build image
+### `docker build -t react-navigation .`
+
+Initialize the container
+### `docker run --name react -i -t -d -p 3000:3000 react-navigation` 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

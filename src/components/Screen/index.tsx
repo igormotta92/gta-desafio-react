@@ -4,30 +4,10 @@ import { ChangeEventHandler, useState } from 'react';
 interface ScreenProps {
   historic?: Array<string>
   value?: any
-  stateOnChange?: any
-  calculate?: any
+  fnHandlerKeypress?: any
 }
 
-function Screen({ value, stateOnChange, historic, calculate }: ScreenProps) {
-
-  function handlerValue(e: any) {
-    console.log('handlerValue');
-    value = e.target.value;
-    // if (!/[\d]]/.test(value)) {
-    //value = value.substring(0, value.length - 1)
-    // }
-    stateOnChange(value);
-
-  }
-
-  function handleKeyPress(e: any) {
-    console.log('handleKeyPress');
-    if (e.key === 'Enter') {
-      calculate(value);
-    }
-    ///[0-9\/*-+]/.test
-  }
-
+function Screen({ value, historic, fnHandlerKeypress }: ScreenProps) {
   return (
     <>
       <div className='screen'>
@@ -39,7 +19,8 @@ function Screen({ value, stateOnChange, historic, calculate }: ScreenProps) {
           })}
         </div>
         <div className="value">
-          <input type="text" value={value} onChange={handlerValue} onKeyPress={handleKeyPress} placeholder='0' />
+          <input type="text" autoFocus readOnly={true} value={value} onKeyDown={fnHandlerKeypress} placeholder='0' />
+          {/* <input type="text" autoFocus value={value} onChange={() => { }} onKeyDown={fnHandlerKeypress} placeholder='0' /> */}
         </div>
       </div>
     </>
