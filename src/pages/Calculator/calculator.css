@@ -1,14 +1,9 @@
 .calculate {
+  width: 290px;
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .calculate--buttonArea {
-  width: 290px;
-  height: 290px;
   background-color: #0c0c0c;
 }
 
@@ -31,18 +26,6 @@
   background-color: #1f1f1f;
 }
 
-.line1 {
-  display: flex;
-}
-
-.line2 {
-  display: flex;
-}
-
-.line3 {
-  display: flex;
-}
-
-.line4 {
+.line {
   display: flex;
 }

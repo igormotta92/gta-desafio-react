@@ -6,15 +6,18 @@ import './style.css'
 interface IProps {
   onClick?: MouseEventHandler
   value?: any,
-  children: ReactNode
+  children: ReactNode,
+  size?: number
 }
 
-function Button({ onClick, value, children }: IProps) {
+function Button({ onClick, value, children, size = 1 }: IProps) {
   return (
     <button
       className='button'
       onClick={onClick}
-      data-value={value}>
+      data-value={value}
+      style={{ width: `calc((70.8px * ${size})` }}
+    >
       {children}
     </button >
   )
